@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<p>
-			Click The Button.
-		</p>
-		<button onclick="myFunction()">
-			Click Me!
-		</button>
-		<p id="dataset">
-		</p>
-		<p id="n">
-		</p>
-		<script>
-			function myFunction() {
-				const regex = /([0-9,])/g;
-				let input;
-				input = window.prompt("Enter a set of numbers.\nSeparate numbers with spaceless commas.\nAccepted Characters: 123456789,");
-				if (regex.test(input) === false) {
-					window.alert("Input contains unaccepted characters");
-				}
-			}
-		</script>
+		<p>Click The Button</p>
+		<button onclick="myFunction()">Click Me!</button>
+		<p id='dataset'></p>
+		<p id='n'></p>
+		<p id='sum'></p>
+		<p id='mean'></p>
+		<p id='dev'></p>
+		<p id='stdev'></p>
+		<p id='stdevp'></p>
+		<p id='stderr'></p>
+		<p id='range'></p>
+		<p id='Q1'></p>
+		<p id='Q2'></p>
+		<p id='Q3'></p>
+		<p id='IQR'></p>
 	</body>
 </html>

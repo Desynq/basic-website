@@ -1,5 +1,5 @@
 function getVersion() {
-	const version = 1.1
+	const version = 'v1.2'
 	document.getElementById('version').innerHTML = version;
 }
 
@@ -23,6 +23,6 @@ function myFunction() {
 		}
 		window.alert('One or more elements are not a valid number!\nErrored Elements: ' + error);
 	}
-	document.getElementById('dataset').innerHTML = dataset;
-	document.getElementById('n').innerHTML = n;
+	document.getElementById('dataset').innerHTML = 'Dataset = ' + dataset;
+	document.getElementById('n').innerHTML = 'n = ' + n;
 }

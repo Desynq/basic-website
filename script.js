@@ -1,5 +1,5 @@
 function getVersion() {
-	const version = 'v1.2'
+	const version = 'v1.2.1'
 	document.getElementById('version').innerHTML = version;
 }
 

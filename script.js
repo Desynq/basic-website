@@ -1,3 +1,8 @@
+function getVersion() {
+	const version = 1.0
+	document.getElementById('version').innerHTML = version;
+}
+
 function myFunction() {
 	let error = [];
 	let input;

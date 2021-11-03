@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<link rel="stylesheet" href="styles.css">
+		<script src="script.js" type="text/javascript"></script>
+		<A HREF='../../index.html'>
+			Home Page
+		</A>
+		<p>
+			One-Var Statistics Calculator
+		</p>
+		<p id='version'>
+			<script>
+				getVersion();
+			</script>
+		</p>
+		<p>
+			Enter Your Dataset Below.<br>
+			• Make sure each number is separated by a comma.<br>
+			• Incorrect formatting of numbers will lead to an error!<br>
+			• Extra characters, such as letters, will be omitted upon calculating.
+		</p>
+		<input id='input' value=''>
+		<button id='button' onclick="myFunction()">
+			Calculate!
+		</button>
+		<p id='dataset'></p>
+		<p id='output'>
+		</p>
+	</body>
+</html>

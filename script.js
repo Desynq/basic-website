@@ -24,6 +24,6 @@ function myFunction() {
 		}
 		window.alert('One or more elements are not a valid number!\nErrored Elements: ' + error);
 	}
-	document.getElementById('dataset').innerHTML = 'Dataset = ' + dataset;
-	document.getElementById('n').innerHTML = 'n = ' + n;
+	document.getElementById('dataset').innerHTML += 'Dataset = ' + dataset;
+	document.getElementById('n').innerHTML += 'n = ' + n;
 }

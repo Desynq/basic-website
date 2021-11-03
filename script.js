@@ -7,6 +7,7 @@ function myFunction() {
 	let error = [];
 	let input;
 	input = window.prompt('Enter a set of numbers.\nSeparate numbers with a comma\nInsensitive to characters that aren\'t numbers or commas.');
+	
 	input = input.replace(/[^0-9\-.,]/g,'');
 	input = input.split(',');
 	if (input.some(a => a === '') ) {

@@ -11,7 +11,7 @@ html = [
 ]
 
 function getVersion() {
-	const version = 'v1.2.3'
+	const version = 'v1.2.4'
 	document.getElementById('version').innerHTML = version
 }
 
@@ -50,8 +50,12 @@ function myFunction() {
 	const max = dataset[n - 1]
 	const range = max - min
 
-	const stdev = Math.sqrt(dataset.reduce(a => (a - mean) ** 2) / (n - 1))
-	const stdevp = Math.sqrt(dataset.reduce(a => (a - mean) ** 2) / n)
+	let dev = 0
+	for (let i = 0; i < n; i++) {
+		dev += (dataset[i] - mean) ** 2
+	}
+	const stdev = Math.sqrt(dev / (n - 1))
+	const stdevp = Math.sqrt(dev / n)
 	const stderr = stdev / Math.sqrt(n)
 
 	let output = html.slice()

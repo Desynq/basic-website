@@ -1,17 +1,5 @@
-html = [
-	'Count = ',
-	'Sum = ',
-	'Mean = ',
-	'Min = ',
-	'Max = ',
-	'Range = ',
-	'StDev = ',
-	'StDevP = ',
-	'StdErr = ',
-]
-
 function getVersion() {
-	const version = 'v1.2.4'
+	const version = 'v1.3.0'
 	document.getElementById('version').innerHTML = version
 }
 
@@ -27,22 +15,23 @@ function myFunction() {
 	input = input.replace(/[^0-9\-.,]/g,'')
 	input = input.split(',')
 	if (input.some(a => a === '') ) {
-		window.alert('Some elements have been left blank!\nYour Input: ')
+		window.alert('Some elements are blank!')
 		return false;
 	}
 	let dataset = input.map(Number)
 	if (dataset.some(isNaN) ) {
 		for (let i = 0; i < dataset.length; i++) {
-			if (isNaN(dataset[i] ) ) {
-				error.push(input[i] )
+			if (isNaN( dataset[i] ) ) {
+				error.push( input[i] )
 			}
 		}
 		window.alert('One or more elements are not a valid number!\nErrored Elements: ' + error)
 	}
 	document.getElementById('dataset').innerHTML = 'Dataset = ' + dataset
-
-
-
+	
+	dataset.sort( (a,b) = a - b) // sort dataset least to greatest
+	document.getElementById('sortedDataset').innerHTML = 'Sorted Dataset = ' + dataset
+	
 	const n = dataset.length
 	const sum = dataset.reduce((a, b) => a + b)
 	const mean = sum / n
@@ -58,16 +47,17 @@ function myFunction() {
 	const stdevp = Math.sqrt(dev / n)
 	const stderr = stdev / Math.sqrt(n)
 
-	let output = html.slice()
-	output[0] += n
-	output[1] += sum
-	output[2] += mean
-	output[3] += min
-	output[4] += max
-	output[5] += range
-	output[6] += stdev
-	output[7] += stdevp
-	output[8] += stderr
+	let output = [
+		'Count = ' + n,
+		'Sum = ' + sum,
+		'Mean = ' + mean,
+		'Min = ' + min,
+		'Max = ' + max,
+		'Range = ' + range,
+		'StDev = ' + stdev,
+		'StDevP = ' + stdevp,
+		'StdErr = ' + stderr
+	]
 	output = output.toString()
 	output = output.replace(/,/g, '<br>')
 	document.getElementById('output').innerHTML = output

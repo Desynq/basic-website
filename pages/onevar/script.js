@@ -29,7 +29,7 @@ function myFunction() {
 	}
 	document.getElementById('dataset').innerHTML = 'Dataset = ' + dataset
 	
-	dataset.sort( (a,b) = a - b) // sort dataset least to greatest
+	dataset.sort( (a,b) => a - b) // sort dataset least to greatest
 	document.getElementById('sortedDataset').innerHTML = 'Sorted Dataset = ' + dataset
 	
 	const n = dataset.length
